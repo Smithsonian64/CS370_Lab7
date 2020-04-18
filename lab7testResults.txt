@@ -1,0 +1,198 @@
+Symbol inserted:"INT" "y" "0"
+Symbol inserted:"INT" "Z" "1"
+Symbol inserted:"INT" "f" "101"
+Symbol inserted:"INT" "b" "101"
+Symbol inserted:"INT" "y" "102"
+Symbol inserted:"INT" "x" "103"
+bb
+NAME                TYPE                ADDRESS             LEVEL               
+y                   INT                 0                   0                   
+Z                   INT[100]            1                   0                   
+f()                 INT                 101                 0                   
+b                   INT                 101                 1                   
+y                   INT                 102                 1                   
+x                   INT[10]             103                 2                   
+
+Symbol inserted:"INT" "x" "112"
+bb
+NAME                TYPE                ADDRESS             LEVEL               
+y                   INT                 0                   0                   
+Z                   INT[100]            1                   0                   
+f()                 INT                 101                 0                   
+b                   INT                 101                 1                   
+y                   INT                 102                 1                   
+x                   INT[10]             112                 2                   
+
+
+NAME                TYPE                ADDRESS             LEVEL               
+y                   INT                 0                   0                   
+Z                   INT[100]            1                   0                   
+f()                 INT                 101                 0                   
+b                   INT                 101                 1                   
+y                   INT                 102                 1                   
+
+
+NAME                TYPE                ADDRESS             LEVEL               
+y                   INT                 0                   0                   
+Z                   INT[100]            1                   0                   
+f()                 INT                 101                 0                   
+
+Symbol inserted:"INT" "z" "101"
+Symbol inserted:"INT" "main" "102"
+Symbol inserted:"INT" "arg1" "102"
+Symbol inserted:"INT" "arg2" "103"
+arg1zyarg1zy
+NAME                TYPE                ADDRESS             LEVEL               
+y                   INT                 0                   0                   
+Z                   INT[100]            1                   0                   
+f()                 INT                 101                 0                   
+z                   INT                 101                 0                   
+main()              INT                 102                 0                   
+arg1                INT                 102                 1                   
+arg2                INT[]               103                 1                   
+
+
+NAME                TYPE                ADDRESS             LEVEL               
+y                   INT                 0                   0                   
+Z                   INT[100]            1                   0                   
+f()                 INT                 101                 0                   
+z                   INT                 101                 0                   
+main()              INT                 102                 0                   
+
+
+NAME                TYPE                ADDRESS             LEVEL               
+y                   INT                 0                   0                   
+Z                   INT[100]            1                   0                   
+f()                 INT                 101                 0                   
+z                   INT                 101                 0                   
+main()              INT                 102                 0                   
+
+Abstract Syntax Tree:
+
+Variable INT y
+Variable INT Z[100]
+Function INT f
+(
+ Parameter INT b
+)
+ Block statment
+  Variable INT y
+  Block statment
+   Variable INT x[10]
+   Assignment statment
+    Identifier x
+    Array Reference
+    [
+     Expression
+     Operator -
+      Expression
+      Operator +
+       Number 2
+       Number 3
+      Number 5
+    ]
+     Expression
+     Operator +
+      Identifier b
+      Call f
+      (
+       Argument
+        Expression
+        Operator +
+         Number 5
+         Operator *
+          Identifier x
+          Array Reference
+          [
+           Number 2
+          ]
+          Identifier b
+      )
+  End Block
+  Block statment
+   Variable INT x[10]
+   Assignment statment
+    Identifier x
+    Array Reference
+    [
+     Expression
+     Operator -
+      Expression
+      Operator +
+       Number 2
+       Number 3
+      Number 5
+    ]
+     Expression
+     Operator +
+      Identifier b
+      Call f
+      (
+       Argument
+        Expression
+        Operator +
+         Number 5
+         Operator *
+          Identifier x
+          Array Reference
+          [
+           Number 2
+          ]
+          Identifier b
+      )
+  End Block
+ End Block
+
+Variable INT z
+Function INT main
+(
+ Parameter INT arg1
+ Parameter INT arg2[]
+)
+ Block statment
+  Write 
+   Call f
+   (
+    Argument
+     Expression
+     Operator +
+      Expression
+      Operator -
+       Expression
+       Operator +
+        Identifier arg1
+        Identifier arg2
+        Array Reference
+        [
+         Expression
+         Operator +
+          Number 3
+          Number 5
+        ]
+       Identifier z
+      Identifier y
+   )
+  Write 
+   Call f
+   (
+    Argument
+     Expression
+     Operator +
+      Expression
+      Operator -
+       Expression
+       Operator +
+        Identifier arg1
+        Identifier arg2
+        Array Reference
+        [
+         Expression
+         Operator +
+          Number 3
+          Number 5
+        ]
+       Identifier z
+      Identifier y
+   )
+ End Block
+
